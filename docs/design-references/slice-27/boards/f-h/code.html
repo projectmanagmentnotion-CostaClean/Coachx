@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Inputs &amp; Intensity Authority Board</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#4d6e00",
+                    "surface-bright": "#363b2c",
+                    "secondary-fixed-dim": "#a5d71f",
+                    "on-surface": "#F7F7F7",
+                    "on-surface-variant": "#c2caad",
+                    "secondary": "#b0e32d",
+                    "error": "#FF4D4F",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-container": "#586577",
+                    "outline-variant": "#424a33",
+                    "error-container": "#93000a",
+                    "surface-container": "#1A1A1A",
+                    "warning": "#FFB020",
+                    "on-tertiary-fixed": "#0f1c2b",
+                    "on-background": "#e0e5cf",
+                    "on-secondary-fixed": "#151f00",
+                    "inverse-on-surface": "#2d3223",
+                    "on-secondary-fixed-variant": "#394d00",
+                    "on-primary": "#243600",
+                    "tertiary-fixed-dim": "#bac8dc",
+                    "primary-fixed": "#b1f800",
+                    "secondary-container": "#95c600",
+                    "on-secondary": "#263500",
+                    "primary-container": "#b1f800",
+                    "on-tertiary": "#243141",
+                    "tertiary": "#ffffff",
+                    "surface": "#121212",
+                    "on-tertiary-fixed-variant": "#3a4858",
+                    "on-primary-fixed": "#131f00",
+                    "surface-container-lowest": "#0b1005",
+                    "on-secondary-container": "#394e00",
+                    "inverse-primary": "#486800",
+                    "inverse-surface": "#e0e5cf",
+                    "surface-container-high": "#272c1d",
+                    "surface-container-highest": "#323728",
+                    "tertiary-container": "#d6e4f8",
+                    "surface-variant": "#323728",
+                    "background": "#050505",
+                    "on-primary-fixed-variant": "#354e00",
+                    "surface-container-low": "#191d10",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#d6e4f8",
+                    "surface-tint": "#9bd900",
+                    "primary-fixed-dim": "#9bd900",
+                    "outline": "rgba(247, 247, 247, 0.1)",
+                    "secondary-fixed": "#c0f43f",
+                    "primary": "#ffffff",
+                    "surface-dim": "#101508"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "16px",
+                    "touch-target": "44px",
+                    "stack-sm": "8px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Hanken Grotesk"],
+                    "display-metrics": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-metrics": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-sans min-h-screen flex flex-col pt-[72px] pb-[80px] md:pb-0 md:pt-[72px]">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b border-outline flex justify-between items-center px-margin-mobile h-touch-target w-full z-50 fixed full-width top-0">
+<div class="flex items-center gap-2">
+<h1 class="font-display-metrics text-display-metrics text-primary uppercase tracking-tighter">AthlexForce</h1>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary">
+<button class="hover:bg-surface-container-high transition-colors duration-100 active:scale-95 transition-transform duration-100 w-touch-target h-touch-target flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="hover:bg-surface-container-high transition-colors duration-100 active:scale-95 transition-transform duration-100 w-touch-target h-touch-target flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<main class="flex-grow max-w-[1440px] mx-auto w-full p-stack-lg flex flex-col gap-stack-lg pt-stack-lg">
+<div class="flex items-center gap-4 mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Inputs &amp; Intensity Authority</h2>
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full border border-outline">BOARDS F, G, H</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Board F: Drag Interaction -->
+<section class="bg-surface border border-outline rounded-[20px] p-stack-lg flex flex-col gap-stack-md relative overflow-hidden group hover:border-outline-variant transition-colors duration-200">
+<div class="absolute inset-0 bg-gradient-to-br from-[#B6FF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+<div class="flex flex-col gap-1 z-10">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Board F — Drag Interaction</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="touch_app">touch_app</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">RPE Slider Storyboard (Start, Mid, End)</p>
+</div>
+<div class="flex flex-col gap-stack-lg z-10 mt-stack-md">
+<!-- START -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant mb-1">
+<span>START (Touch)</span>
+<span class="text-secondary">Hit area &gt;= 44px</span>
+</div>
+<div class="h-14 bg-surface-container rounded-lg border border-outline flex items-center px-4 relative overflow-hidden">
+<div class="h-1 bg-surface-variant w-full rounded-full relative">
+<div class="w-1/4 h-full bg-secondary rounded-full"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-1/4 -ml-4 w-8 h-8 rounded-full bg-secondary border-4 border-surface shadow-[0_0_0_2px_rgba(182,255,0,0.4)] flex items-center justify-center relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-high border border-outline px-3 py-1 rounded text-primary font-label-md text-label-md opacity-0">7</div>
+</div>
+<div class="absolute top-1/2 -translate-y-1/2 left-1/4 -ml-6 w-[48px] h-[48px] rounded-full border border-dashed border-secondary/30 pointer-events-none"></div>
+</div>
+<div class="absolute right-4 font-label-lg text-label-lg text-secondary">RPE 7</div>
+</div>
+</div>
+<!-- MID -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant mb-1">
+<span>MID (Dragging)</span>
+<span>Live Value Bubble</span>
+</div>
+<div class="h-14 bg-surface-container rounded-lg border border-secondary/50 flex items-center px-4 relative overflow-hidden">
+<div class="h-1 bg-surface-variant w-full rounded-full relative">
+<div class="w-1/2 h-full bg-secondary rounded-full"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-1/2 -ml-4 w-8 h-8 rounded-full bg-secondary border-4 border-surface flex items-center justify-center relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-surface-container-highest border border-secondary/30 px-3 py-1.5 rounded-lg text-primary font-label-lg text-label-lg shadow-lg flex items-center gap-1 transition-transform duration-100 scale-100">
+                                        8.5
+                                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-surface-container-highest border-b border-r border-secondary/30 rotate-45"></div>
+</div>
+</div>
+<div class="absolute top-1/2 -translate-y-1/2 left-1/2 -ml-6 w-[48px] h-[48px] rounded-full border border-dashed border-secondary/50 bg-secondary/10 pointer-events-none"></div>
+</div>
+<div class="absolute right-4 font-label-lg text-label-lg text-secondary opacity-50">RPE 8.5</div>
+</div>
+</div>
+<!-- END -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant mb-1">
+<span>END (Snap)</span>
+<span>Discrete Value</span>
+</div>
+<div class="h-14 bg-surface-container rounded-lg border border-outline flex items-center px-4 relative overflow-hidden">
+<div class="h-1 bg-surface-variant w-full rounded-full relative">
+<div class="w-[60%] h-full bg-secondary rounded-full"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-[60%] -ml-4 w-8 h-8 rounded-full bg-secondary border-4 border-surface shadow-[0_0_0_2px_rgba(247,247,247,0.1)] flex items-center justify-center relative">
+</div>
+</div>
+<div class="absolute right-4 font-label-lg text-label-lg text-secondary">RPE 9</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Board G: Neutral Intensity -->
+<section class="bg-surface border border-outline rounded-[20px] p-stack-lg flex flex-col gap-stack-md relative overflow-hidden group hover:border-outline-variant transition-colors duration-200">
+<div class="flex flex-col gap-1 z-10">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Board G — Neutral Intensity</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="contrast">contrast</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">RPE/RIR Values: Functional, not emotional.</p>
+</div>
+<div class="bg-surface-container rounded-lg border border-outline p-stack-md mt-stack-md">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Intensity Scale</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Selection = Lime</span>
+</div>
+<div class="grid grid-cols-5 gap-2 h-20">
+<div class="bg-surface border border-outline rounded-lg flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="font-label-lg text-label-lg text-on-surface">6</span>
+<span class="font-label-md text-label-md text-on-surface-variant">RPE</span>
+</div>
+<div class="bg-surface border border-outline rounded-lg flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="font-label-lg text-label-lg text-on-surface">7</span>
+<span class="font-label-md text-label-md text-on-surface-variant">RPE</span>
+</div>
+<div class="bg-surface-container-high border-2 border-secondary rounded-lg flex flex-col items-center justify-center gap-1 relative shadow-[0_0_15px_rgba(182,255,0,0.15)] cursor-pointer">
+<span class="font-label-lg text-label-lg text-secondary">8</span>
+<span class="font-label-md text-label-md text-secondary">RPE</span>
+<div class="absolute -top-2 -right-2 bg-secondary text-on-secondary w-5 h-5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+</div>
+<div class="bg-surface border border-outline rounded-lg flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="font-label-lg text-label-lg text-on-surface">9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">RPE</span>
+</div>
+<div class="bg-surface border border-outline rounded-lg flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="font-label-lg text-label-lg text-on-surface">10</span>
+<span class="font-label-md text-label-md text-on-surface-variant">RPE</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md mt-4">
+<div class="bg-surface-container rounded-lg border border-outline p-4 flex flex-col items-center justify-center text-center gap-2">
+<span class="material-symbols-outlined text-error" data-icon="block">block</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Don't use Red for Low/High</p>
+</div>
+<div class="bg-surface-container rounded-lg border border-outline p-4 flex flex-col items-center justify-center text-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Lime (#B6FF00) for active state only.</p>
+</div>
+</div>
+</section>
+<!-- Board H: Plan vs Actual -->
+<section class="bg-surface border border-outline rounded-[20px] p-stack-lg flex flex-col gap-stack-md relative overflow-hidden group hover:border-outline-variant transition-colors duration-200 lg:col-span-2">
+<div class="flex flex-col gap-1 z-10">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Board H — Plan vs Actual</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="difference">difference</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Self-Managed vs Coach-Managed execution tracking.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg mt-stack-md">
+<!-- Self-Managed -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="person">person</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">Self-Managed</span>
+</div>
+<div class="bg-surface-container border border-outline rounded-lg p-4 flex flex-col gap-4 relative overflow-hidden">
+<div class="flex justify-between items-center pb-2 border-b border-outline border-dashed">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Plan</span>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant">
+<span>30 KG</span>
+<span class="text-on-surface-variant/50">×</span>
+<span>8 Reps</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-label-md text-label-md text-secondary uppercase">Actual</span>
+<div class="flex items-center gap-2">
+<div class="bg-surface border border-secondary rounded px-3 py-1 font-label-lg text-label-lg text-secondary">
+                                        32.5 KG
+                                    </div>
+<span class="text-on-surface-variant/50">×</span>
+<div class="bg-surface border border-secondary rounded px-3 py-1 font-label-lg text-label-lg text-secondary">
+                                        8 Reps
+                                    </div>
+</div>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-secondary rounded-l-full"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Actual inputs override plan visually, but plan remains referenceable.</p>
+</div>
+<!-- Coach-Managed -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="sports">sports</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">Coach-Managed</span>
+</div>
+<div class="bg-surface-container border border-outline rounded-lg p-4 flex flex-col gap-4 relative overflow-hidden">
+<div class="flex justify-between items-center pb-2 border-b border-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="lock">lock</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Prescription</span>
+</div>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface">
+<span>30 KG</span>
+<span class="text-on-surface-variant/50">×</span>
+<span>8 Reps</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-label-md text-label-md text-secondary uppercase">Actual</span>
+<div class="flex items-center gap-2">
+<div class="bg-surface border border-secondary rounded px-3 py-1 font-label-lg text-label-lg text-secondary">
+                                        32.5 KG
+                                    </div>
+<span class="text-on-surface-variant/50">×</span>
+<div class="bg-surface border border-outline rounded px-3 py-1 font-label-lg text-label-lg text-on-surface">
+                                        8 Reps
+                                    </div>
+</div>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-secondary rounded-l-full opacity-50"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Plan is locked (read-only). Discrepancies are highlighted.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-surface border-t border-outline fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-4 pt-2 z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="fitness_center">fitness_center</span>
+            Workouts
+        </a>
+<a class="flex flex-col items-center justify-center text-secondary font-bold hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+            Intensity
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="insert_chart">insert_chart</span>
+            Progress
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

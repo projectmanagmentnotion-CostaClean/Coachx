@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Fallback &amp; Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323728",
+                        "on-surface": "#e0e5cf",
+                        "on-tertiary-container": "#586577",
+                        "outline-variant": "#424a33",
+                        "secondary-container": "#95c600",
+                        "warning": "#FFB020",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary": "#263500",
+                        "tertiary-container": "#d6e4f8",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "on-primary": "#243600",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-background": "#e0e5cf",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container": "#1d2114",
+                        "surface-variant": "#323728",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-fixed": "#151f00",
+                        "on-surface-variant": "#c2caad",
+                        "on-secondary-container": "#394e00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#b1f800",
+                        "surface-container-low": "#191d10",
+                        "surface-tint": "#9bd900",
+                        "primary-fixed-dim": "#9bd900",
+                        "secondary-fixed": "#c0f43f",
+                        "on-tertiary": "#243141",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "inverse-surface": "#e0e5cf",
+                        "background": "#050505",
+                        "surface-container-high": "#272c1d",
+                        "primary-fixed": "#b1f800",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#354e00",
+                        "primary": "#ffffff",
+                        "surface-dim": "#101508",
+                        "on-primary-container": "#4d6e00",
+                        "inverse-on-surface": "#2d3223",
+                        "inverse-primary": "#486800",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "error": "#FF4D4F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pb-safe pt-16 selection:bg-secondary selection:text-on-secondary">
+<!-- Top Navigation (Mobile) -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface flex justify-between items-center h-16 px-margin-mobile border-b border-outline-variant">
+<div class="font-display-lg text-display-lg font-black text-secondary dark:text-secondary tracking-tighter">AthlexForce</div>
+<div class="flex gap-4 text-primary dark:text-primary">
+<button class="w-touch-target h-touch-target flex items-center justify-center hover:bg-surface-container-highest transition-colors active:scale-95 duration-100 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-touch-target h-touch-target flex items-center justify-center hover:bg-surface-container-highest transition-colors active:scale-95 duration-100 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="p-margin-mobile space-y-stack-lg pb-32">
+<!-- BOARD M: TODAY IN-APP FALLBACK -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Today's Fallback</h2>
+<div class="bg-surface rounded-[20px] p-4 border border-outline shadow-sm flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<div class="bg-secondary-container text-on-secondary-container w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-secondary">REMINDER</p>
+<p class="font-body-md text-body-md font-bold mt-1">Workout at 18:30</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">DONE</button>
+<button class="flex-1 border border-outline text-on-background font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">SNOOZE</button>
+</div>
+</div>
+<div class="bg-surface rounded-[20px] p-4 border border-outline shadow-sm flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<div class="bg-surface-container-high text-on-surface w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border border-outline">
+<span class="material-symbols-outlined">fact_check</span>
+</div>
+<div class="flex-1 flex flex-col justify-center h-10">
+<p class="font-body-md text-body-md font-bold">TIME FOR YOUR CHECK-IN</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">START</button>
+</div>
+</div>
+</section>
+<!-- BOARD N: IN-APP FEEDBACK -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Transient Feedback</h2>
+<div class="bg-[#181818] rounded-xl p-3 border border-outline flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">water_drop</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">HYDRATION REMINDER</p>
+<p class="font-body-md text-body-md text-sm">Time for water.</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-background transition-colors p-2">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</section>
+<!-- BOARD O: CLICKED FLOW (Visualized as a grid) -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Routing Intent</h2>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface rounded-xl p-3 border border-outline text-center flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+<p class="font-label-md text-label-md">Workout → Today</p>
+</div>
+<div class="bg-surface rounded-xl p-3 border border-outline text-center flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+<p class="font-label-md text-label-md">Meal → Nutrition</p>
+</div>
+<div class="bg-surface rounded-xl p-3 border border-outline text-center flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+<p class="font-label-md text-label-md">Check-in → Check-in</p>
+</div>
+</div>
+</section>
+<!-- BOARD P: EXPIRED DESTINATION -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Dead Link Fallback</h2>
+<div class="bg-surface rounded-[20px] p-6 border border-outline text-center flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant">timer_off</span>
+</div>
+<p class="font-body-md text-body-md font-bold uppercase tracking-wide">THAT REMINDER IS NO LONGER ACTIVE</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-2">The event has passed or was removed.</p>
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">GO TO TODAY</button>
+</div>
+</section>
+<!-- BOARD Q: DELIVERY ERROR -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Delivery Error</h2>
+<div class="bg-surface rounded-[20px] p-6 border border-error-container text-center flex flex-col items-center gap-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-error-container opacity-5 pointer-events-none"></div>
+<div class="w-16 h-16 rounded-full bg-[#1A0000] flex items-center justify-center mb-2 z-10 border border-[#400000]">
+<span class="material-symbols-outlined text-[32px] text-error">notification_important</span>
+</div>
+<p class="font-body-md text-body-md font-bold text-error uppercase z-10">WE COULDN’T ENABLE NOTIFICATIONS</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-2 z-10">Your preferences were saved, but browser notifications couldn’t be activated.</p>
+<div class="flex flex-col gap-2 w-full z-10">
+<button class="w-full bg-surface-container border border-error text-on-background font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">TRY AGAIN</button>
+<button class="w-full border border-outline text-on-surface-variant font-label-lg text-label-lg rounded-lg h-touch-target flex items-center justify-center active:scale-95 transition-transform">USE IN-APP REMINDERS</button>
+</div>
+</div>
+</section>
+<!-- BOARD R: SUBSCRIPTION REFRESH -->
+<section class="space-y-stack-md">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Subtle Recovery</h2>
+<div class="bg-surface rounded-xl p-3 border border-outline flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="animate-spin text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">UPDATING NOTIFICATIONS...</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-3 border border-[#B6FF00]/40 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<p class="font-label-md text-label-md text-secondary">READY</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 z-50 rounded-t-xl bg-surface-container dark:bg-surface-container border-t border-outline-variant shadow-lg md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-label-sm text-label-sm font-bold">Training</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">edit_note</span>
+<span class="font-label-sm text-label-sm">Log</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">monitoring</span>
+<span class="font-label-sm text-label-sm">KPIs</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

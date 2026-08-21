@@ -1,0 +1,12 @@
+<svg width="480" height="640" viewBox="0 0 480 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="640" fill="#101010"/>
+  <rect x="36" y="36" width="408" height="568" rx="32" fill="#121212" stroke="#252525"/>
+  <path d="M76 122C144 90 330 92 404 128" stroke="#1A1A1A" stroke-width="4"/>
+  <path d="M210 126C252 126 286 152 288 190C290 222 266 250 236 252C210 254 190 242 176 220C162 198 166 146 210 126Z" fill="#1F1F1F"/>
+  <path d="M214 250C240 260 268 286 286 320" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M232 258C214 300 208 352 208 414" stroke="#B6FF00" stroke-width="8" stroke-linecap="round"/>
+  <path d="M286 320C304 360 308 428 296 560" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M210 414C224 456 230 500 226 548" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="334" cy="454" r="54" fill="#1A1A1A" stroke="#252525"/>
+  <text x="334" y="480" text-anchor="middle" fill="#B6FF00" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="2">SIDE</text>
+</svg>

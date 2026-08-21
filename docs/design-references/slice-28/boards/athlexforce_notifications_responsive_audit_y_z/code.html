@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Responsive &amp; Audit (Y-Z)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#121212",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323728",
+                        "on-surface": "#e0e5cf",
+                        "on-tertiary-container": "#586577",
+                        "outline-variant": "#424a33",
+                        "secondary-container": "#95c600",
+                        "warning": "#FFB020",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary": "#263500",
+                        "tertiary-container": "#d6e4f8",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "on-primary": "#243600",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-background": "#e0e5cf",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container": "#1d2114",
+                        "surface-variant": "#323728",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-fixed": "#151f00",
+                        "on-surface-variant": "#c2caad",
+                        "on-secondary-container": "#394e00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#b1f800",
+                        "surface-container-low": "#191d10",
+                        "surface-tint": "#9bd900",
+                        "primary-fixed-dim": "#9bd900",
+                        "secondary-fixed": "#c0f43f",
+                        "on-tertiary": "#243141",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "inverse-surface": "#e0e5cf",
+                        "background": "#050505",
+                        "surface-container-high": "#272c1d",
+                        "primary-fixed": "#b1f800",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#354e00",
+                        "primary": "#ffffff",
+                        "surface-dim": "#101508",
+                        "on-primary-container": "#4d6e00",
+                        "inverse-on-surface": "#2d3223",
+                        "inverse-primary": "#486800",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "error": "#FF4D4F"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e0e5cf;
+        }
+        .outline-ghost {
+            box-shadow: inset 0 0 0 1px rgba(247, 247, 247, 0.1);
+        }
+        .bg-level-1 {
+            background-color: #121212;
+        }
+        .bg-level-2 {
+            background-color: #181818;
+        }
+        
+        /* Custom Toggle Switch styling using standard tailwind utilities where possible */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #B6FF00;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #B6FF00;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+            background-color: #121212;
+        }
+        
+        /* Reduced motion media query applied via JS classes for demo purposes */
+        .reduced-motion-demo * {
+            transition: none !important;
+            animation: none !important;
+        }
+        
+        .smooth-transition {
+            transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-body-md text-body-md pt-20 pb-32 md:pb-16 bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Placeholder (Since this is a settings/audit page, Nav might be suppressed, but we follow JSON rules if it's top-level. For Settings, typically TopAppbar is present, BottomNav suppressed or 'Profile' active) -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-container_margin_mobile md:px-container_margin_desktop w-full px-margin-mobile">
+<div class="flex items-center gap-4">
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-100 text-primary dark:text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-black text-secondary dark:text-secondary tracking-tighter">AthlexForce</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-100 text-primary dark:text-primary">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-8 space-y-16">
+<!-- Header for Audit Board -->
+<section class="space-y-4 pt-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">BOARD GROUP 5/5: RESPONSIVE &amp; AUDIT (Y-Z)</h2>
+<p class="text-on-surface-variant max-w-2xl">Final verification of responsiveness, accessibility standards, and push notification UX patterns. Utilizing canonical AthlexForce styling.</p>
+</section>
+<!-- BOARD Y: RESPONSIVE MATRIX -->
+<section class="space-y-8">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-secondary">BOARD Y: RESPONSIVE MATRIX</h3>
+<p class="text-on-surface-variant font-label-lg text-label-lg mt-2">Testing Notification Settings at various viewport widths. Demonstrating German (DE) text pressure and 44px touch targets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- 375px Viewport Demo -->
+<div class="bg-level-1 rounded-[20px] outline-ghost overflow-hidden flex flex-col mx-auto" style="width: 375px; max-width: 100%;">
+<div class="bg-level-2 py-3 px-4 border-b border-outline-variant text-center">
+<span class="font-label-md text-label-md text-on-surface-variant">375px (iPhone Mini)</span>
+</div>
+<div class="p-4 space-y-6">
+<!-- Master Control -->
+<div class="flex items-center justify-between min-h-[44px]">
+<span class="font-body-lg text-body-lg font-bold text-primary">Benachrichtigungen zulassen</span>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-level-2 border-4 appearance-none cursor-pointer smooth-transition checked:right-0 checked:border-secondary" id="toggle-1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer smooth-transition before:absolute before:inset-0 before:bg-secondary before:opacity-0 before:transition-opacity" for="toggle-1"></label>
+</div>
+</div>
+<!-- Categories -->
+<div class="space-y-4 pt-4 border-t border-outline-variant">
+<div class="flex items-center justify-between min-h-[44px]">
+<div>
+<div class="font-body-md text-body-md text-primary">Trainingserinnerungen</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Push &amp; In-App</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-level-2 border-4 appearance-none cursor-pointer smooth-transition" id="toggle-2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer smooth-transition" for="toggle-2"></label>
+</div>
+</div>
+<div class="flex items-center justify-between min-h-[44px]">
+<div>
+<div class="font-body-md text-body-md text-primary">Erholungsstatus-Updates</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Nur Push</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-level-2 border-4 appearance-none cursor-pointer smooth-transition" id="toggle-3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer smooth-transition" for="toggle-3"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 430px Viewport Demo -->
+<div class="bg-level-1 rounded-[20px] outline-ghost overflow-hidden flex flex-col mx-auto" style="width: 430px; max-width: 100%;">
+<div class="bg-level-2 py-3 px-4 border-b border-outline-variant text-center">
+<span class="font-label-md text-label-md text-on-surface-variant">430px (iPhone Pro Max)</span>
+</div>
+<div class="p-4 space-y-6">
+<!-- Master Control -->
+<div class="flex items-center justify-between min-h-[44px]">
+<span class="font-body-lg text-body-lg font-bold text-primary">Benachrichtigungen zulassen</span>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-level-2 border-4 appearance-none cursor-pointer smooth-transition" id="toggle-4" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer smooth-transition" for="toggle-4"></label>
+</div>
+</div>
+<!-- Categories -->
+<div class="space-y-4 pt-4 border-t border-outline-variant">
+<div class="flex items-center justify-between min-h-[44px]">
+<div>
+<div class="font-body-md text-body-md text-primary">Trainingserinnerungen</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Tägliche Push-Benachrichtigungen und In-App-Meldungen</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0 ml-4">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-level-2 border-4 appearance-none cursor-pointer smooth-transition" id="toggle-5" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-highest cursor-pointer smooth-transition" for="toggle-5"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BOARD Z: DO / DON'T -->
+<section class="space-y-8">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md text-secondary">BOARD Z: PUSH PERMISSION UX</h3>
+<p class="text-on-surface-variant font-label-lg text-label-lg mt-2">Guidelines for contextual asks and avoiding dark patterns.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- DO Card -->
+<div class="bg-level-1 rounded-[20px] outline-ghost p-6 space-y-4 border-t-4 border-t-secondary-container">
+<div class="flex items-center gap-3 text-secondary-container">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill">check_circle</span>
+<h4 class="font-headline-md text-headline-md">DO</h4>
+</div>
+<div class="bg-level-2 rounded-lg p-4 outline-ghost mt-4">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="flex-1">
+<h5 class="font-body-md text-body-md font-bold text-primary mb-1">Never miss a workout</h5>
+<p class="font-label-md text-label-md text-on-surface-variant mb-4">Enable notifications to receive your daily training protocol right when you need it.</p>
+<div class="flex gap-3">
+<button class="flex-1 min-h-[44px] bg-secondary text-[#000] font-label-lg text-label-lg rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all">Enable</button>
+<button class="flex-1 min-h-[44px] border border-outline text-primary font-label-lg text-label-lg rounded-lg hover:bg-surface-container-highest active:scale-95 transition-all">Not Now</button>
+</div>
+</div>
+</div>
+</div>
+<ul class="space-y-2 mt-4 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="text-secondary-container">•</span> Contextual ask triggered by action.</li>
+<li class="flex items-start gap-2"><span class="text-secondary-container">•</span> Explain clear value proposition.</li>
+<li class="flex items-start gap-2"><span class="text-secondary-container">•</span> Neutral "Not Now" option with equal 44px hit area.</li>
+</ul>
+</div>
+<!-- DON'T Card -->
+<div class="bg-level-1 rounded-[20px] outline-ghost p-6 space-y-4 border-t-4 border-t-error">
+<div class="flex items-center gap-3 text-error">
+<span class="material-symbols-outlined" data-icon="cancel" data-weight="fill">cancel</span>
+<h4 class="font-headline-md text-headline-md">DON'T</h4>
+</div>
+<div class="bg-level-2 rounded-lg p-4 outline-ghost mt-4">
+<div class="text-center">
+<h5 class="font-body-md text-body-md font-bold text-primary mb-1">TURN ON NOTIFICATIONS NOW</h5>
+<p class="font-label-md text-label-md text-on-surface-variant mb-4">You will fail your goals if you don't enable alerts.</p>
+<div class="space-y-2">
+<button class="w-full min-h-[44px] bg-error text-white font-label-lg text-label-lg rounded-lg font-bold">ALLOW NOTIFICATIONS</button>
+<button class="w-full min-h-[24px] text-on-surface-variant font-label-md text-label-md text-xs underline">I don't care about my progress</button>
+</div>
+</div>
+</div>
+<ul class="space-y-2 mt-4 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="text-error">•</span> Prompting immediately at login.</li>
+<li class="flex items-start gap-2"><span class="text-error">•</span> Fear-based copy or shaming the user.</li>
+<li class="flex items-start gap-2"><span class="text-error">•</span> Tiny, unclickable dismissal targets (&lt; 44px).</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation logic handler -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup simple toggle visual logic since tailwind peer classes can be complex without full setup
+            const toggles = document.querySelectorAll('.toggle-checkbox');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const label = this.nextElementSibling;
+                    if(this.checked) {
+                        this.classList.add('right-0', 'border-secondary');
+                        label.classList.add('bg-secondary');
+                    } else {
+                        this.classList.remove('right-0', 'border-secondary');
+                        label.classList.remove('bg-secondary');
+                    }
+                });
+                
+                // Init state
+                if(toggle.checked) {
+                    toggle.classList.add('right-0', 'border-secondary');
+                    toggle.nextElementSibling.classList.add('bg-secondary');
+                }
+            });
+        });
+    </script>
+</body></html>

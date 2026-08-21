@@ -1,0 +1,14 @@
+.next/
+node_modules/
+_stitch_extract/
+*.tsbuildinfo
+.next-start.log
+.next-start.err
+home*.png
+calendar.png
+day.png
+profile*.png
+progress*.png
+
+.vercel
+.env*

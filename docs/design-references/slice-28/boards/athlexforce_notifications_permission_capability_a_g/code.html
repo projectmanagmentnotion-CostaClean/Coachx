@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Board Group 1/5</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323728",
+                        "on-surface": "#e0e5cf",
+                        "on-tertiary-container": "#586577",
+                        "outline-variant": "#424a33",
+                        "secondary-container": "#95c600",
+                        "warning": "#FFB020",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary": "#263500",
+                        "tertiary-container": "#d6e4f8",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "on-primary": "#243600",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-background": "#e0e5cf",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container": "#1d2114",
+                        "surface-variant": "#323728",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-fixed": "#151f00",
+                        "on-surface-variant": "#c2caad",
+                        "on-secondary-container": "#394e00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#b1f800",
+                        "surface-container-low": "#191d10",
+                        "surface-tint": "#9bd900",
+                        "primary-fixed-dim": "#9bd900",
+                        "secondary-fixed": "#c0f43f",
+                        "on-tertiary": "#243141",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "inverse-surface": "#e0e5cf",
+                        "background": "#050505",
+                        "surface-container-high": "#272c1d",
+                        "primary-fixed": "#b1f800",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#354e00",
+                        "primary": "#ffffff",
+                        "surface-dim": "#101508",
+                        "on-primary-container": "#4d6e00",
+                        "inverse-on-surface": "#2d3223",
+                        "inverse-primary": "#486800",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "error": "#FF4D4F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "20px"
+                    },
+                    "spacing": {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "display-metrics": ["Hanken Grotesk", "sans-serif"],
+                        "label-md": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "label-lg": ["Hanken Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #050505; color: #e0e5cf; }
+        .ghost-border { outline: 1px solid rgba(247, 247, 247, 0.1); }
+        .app-frame { 
+            width: 375px; 
+            height: 812px; 
+            background-color: #050505; 
+            border-radius: 40px; 
+            overflow: hidden;
+            position: relative;
+            outline: 1px solid rgba(247,247,247,0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background-color: #050505;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .modal-sheet {
+            transform: translateY(100%);
+            transition: transform 380ms cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .modal-sheet.open {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="p-8 font-body-md text-body-md min-h-screen">
+<header class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">ATHLEXFORCE SLICE 28</h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">BOARD GROUP 1/5: PERMISSION &amp; CAPABILITY (A-G)</h2>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- BOARD A: SETTINGS ENTRY -->
+<div class="flex flex-col items-center">
+<h3 class="font-label-lg text-label-lg text-secondary mb-4 uppercase tracking-widest">A. Settings Entry</h3>
+<div class="app-frame flex flex-col">
+<div class="notch"></div>
+<!-- TopAppBar -->
+<div class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile">
+<span class="font-display-lg text-display-lg font-black text-secondary tracking-tighter" style="font-size: 24px;">AthlexForce</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-highest rounded-full p-2 active:scale-95 duration-100">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-highest rounded-full p-2 active:scale-95 duration-100">settings</span>
+</div>
+</div>
+<div class="flex-1 mt-20 px-margin-mobile overflow-y-auto pb-32">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6">Profile Settings</h4>
+<div class="bg-surface rounded-card p-4 ghost-border mb-4">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-lg text-label-lg text-on-surface">NOTIFICACIONES</span>
+<span class="font-label-md text-label-md text-secondary bg-surface-container-high px-2 py-1 rounded">CONFIGURAR</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">fitness_center</span>
+<span class="text-on-surface-variant text-sm">Workout Reminders: <span class="text-on-surface">Off</span></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
+<span class="text-on-surface-variant text-sm">Meals: <span class="text-on-surface">Off</span></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">fact_check</span>
+<span class="text-on-surface-variant text-sm">Check-ins: <span class="text-on-surface">Off</span></span>
+</div>
+</div>
+<button class="w-full h-touch-target bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center active:scale-95 transition-transform duration-100" onclick="document.getElementById('modal-b').classList.add('open')">
+                            MANAGE NOTIFICATIONS
+                        </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-surface-container border-t border-outline-variant rounded-t-xl z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-[10px]">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-label-sm text-[10px]">Training</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-label-sm text-[10px]">Log</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-sm text-[10px]">KPIs</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-[10px]">Profile</span>
+</div>
+</div>
+</div>
+</div>
+<!-- BOARD B: PRE-PERMISSION EXPLAINER -->
+<div class="flex flex-col items-center">
+<h3 class="font-label-lg text-label-lg text-secondary mb-4 uppercase tracking-widest">B. Pre-Permission</h3>
+<div class="app-frame flex flex-col relative bg-surface-dim">
+<div class="notch"></div>
+<div class="flex-1 opacity-20 pointer-events-none p-4 mt-12">
+<div class="bg-surface h-32 rounded-card mb-4"></div>
+<div class="bg-surface h-64 rounded-card"></div>
+</div>
+<!-- Bottom Sheet -->
+<div class="modal-sheet open absolute bottom-0 left-0 w-full bg-surface rounded-t-card border-t border-outline-variant p-6 flex flex-col z-40" id="modal-b">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-6"></div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">STAY ON TRACK</h4>
+<p class="text-on-surface-variant mb-6">Receive useful reminders for training, meals and check-ins.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">block</span>
+<span class="text-on-surface">No streak spam</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">person</span>
+<span class="text-on-surface">Athlete-focused</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">shield</span>
+<span class="text-on-surface">Privacy first</span>
+</li>
+</ul>
+<div class="flex flex-col gap-3">
+<button class="w-full h-touch-target bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg active:scale-95 transition-transform duration-100">
+                            ENABLE NOTIFICATIONS
+                        </button>
+<button class="w-full h-touch-target bg-transparent text-primary font-label-lg text-label-lg rounded-lg ghost-border active:scale-95 transition-transform duration-100" onclick="document.getElementById('modal-b').classList.remove('open')">
+                            NOT NOW
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

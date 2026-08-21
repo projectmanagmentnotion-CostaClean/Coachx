@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AthlexForce - Notifications Disabled</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "inverse-surface": "#e0e5cf",
+                        "on-tertiary": "#243141",
+                        "surface-container-high": "#272c1d",
+                        "surface-variant": "#323728",
+                        "surface-container-low": "#191d10",
+                        "on-surface": "#e0e5cf",
+                        "primary-fixed": "#b1f800",
+                        "on-primary-container": "#4d6e00",
+                        "secondary-container": "#95c600",
+                        "on-primary": "#243600",
+                        "on-primary-fixed": "#131f00",
+                        "background": "#050505",
+                        "inverse-primary": "#486800",
+                        "tertiary-fixed": "#d6e4f8",
+                        "surface-container-highest": "#323728",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "on-primary-fixed-variant": "#354e00",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "primary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary-container": "#394e00",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "surface-dim": "#101508",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c2caad",
+                        "surface-container": "#1d2114",
+                        "primary-container": "#b1f800",
+                        "on-secondary": "#263500",
+                        "outline-variant": "#424a33",
+                        "inverse-on-surface": "#2d3223",
+                        "warning": "#FFB020",
+                        "on-secondary-fixed": "#151f00",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-container": "#d6e4f8",
+                        "error": "#FF4D4F",
+                        "on-tertiary-container": "#586577",
+                        "secondary-fixed": "#c0f43f",
+                        "surface-tint": "#9bd900",
+                        "on-background": "#e0e5cf",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "primary-fixed-dim": "#9bd900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "12px",
+                        "touch-target": "44px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.primary'); }
+        /* Remove default button tap highlights on mobile */
+        button { -webkit-tap-highlight-color: transparent; }
+        
+        /* Custom Toggle Switch Styles for Disabled State */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.secondary');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.secondary');
+        }
+        
+        /* Disabled specific toggles */
+        .toggle-disabled .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.surface-variant'); /* Grayed out */
+        }
+        .toggle-disabled .toggle-checkbox:checked {
+            border-color: theme('colors.surface-variant');
+        }
+        .toggle-disabled .toggle-checkbox {
+            cursor: not-allowed;
+        }
+        
+        .transition-colors-fast { transition: background-color 100ms ease-in-out, border-color 100ms ease-in-out; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b border-outline flex justify-between items-center px-margin-mobile h-touch-target w-full z-50 sticky top-0 md:hidden">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="h-touch-target w-touch-target flex items-center justify-center -ml-2 active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined text-primary dark:text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary">Notifications</h1>
+</div>
+</header>
+<!-- Desktop Navigation Shell (Hidden on Mobile) -->
+<nav class="hidden md:flex bg-background border-b border-outline px-8 h-20 items-center justify-between sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="font-display-metrics text-[32px] text-primary uppercase tracking-tighter">AthlexForce</div>
+<div class="flex gap-6 h-full items-center ml-8">
+<button class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-100 h-touch-target px-2">Workouts</button>
+<button class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-100 h-touch-target px-2">Intensity</button>
+<button class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-100 h-touch-target px-2">Progress</button>
+<button class="text-primary font-bold font-label-lg text-label-lg border-b-2 border-secondary h-touch-target px-2 flex items-center">Profile</button>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="h-touch-target w-touch-target flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors duration-100">
+<span class="material-symbols-outlined text-primary">settings</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile md:px-8 py-stack-lg max-w-3xl mx-auto w-full pb-32 md:pb-stack-lg">
+<!-- Header / Context -->
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Notification Settings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage how AthlexForce communicates with you. Your preferences are saved locally.</p>
+</div>
+<!-- Master Switch Card (The explicit OFF state) -->
+<div class="bg-surface rounded-xl p-4 mb-stack-lg border border-outline relative overflow-hidden group">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">notifications_off</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Master Switch</h3>
+<span class="font-label-md text-label-md text-warning uppercase tracking-widest">DISABLED_BY_USER</span>
+</div>
+</div>
+<!-- Master Toggle (OFF) -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in h-touch-target flex items-center justify-center">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-primary border-4 appearance-none cursor-pointer z-10 transition-colors-fast border-surface-variant top-1/2 -translate-y-1/2 left-0" id="toggle_master" name="toggle_master" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer w-12 transition-colors-fast" for="toggle_master"></label>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">All notifications are currently paused. Turn on the master switch to resume receiving updates based on your preferences below.</p>
+</div>
+<!-- Sub-categories (Grayed out / Inactive to show preserved state) -->
+<div class="space-y-stack-md opacity-50 pointer-events-none transition-opacity duration-300" id="notification_categories">
+<div class="flex items-center gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">lock</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Preferences Preserved</span>
+</div>
+<!-- Category: Workouts -->
+<div class="bg-surface rounded-xl p-4 border border-outline flex justify-between items-center toggle-disabled">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">fitness_center</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Workout Reminders</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Pre-workout alerts and schedule changes.</p>
+</div>
+</div>
+<!-- Toggle (Preserved ON state, but grayed out due to master off) -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none h-touch-target flex items-center justify-center">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-primary border-4 appearance-none z-10 top-1/2 -translate-y-1/2 right-0 border-surface-variant" disabled="" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant w-12"></label>
+</div>
+</div>
+<!-- Category: Progress -->
+<div class="bg-surface rounded-xl p-4 border border-outline flex justify-between items-center toggle-disabled">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">insert_chart</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Weekly Progress</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Volume and intensity tracking summaries.</p>
+</div>
+</div>
+<!-- Toggle (Preserved OFF state) -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none h-touch-target flex items-center justify-center">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-primary border-4 appearance-none z-10 top-1/2 -translate-y-1/2 left-0 border-surface-variant" disabled="" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant w-12"></label>
+</div>
+</div>
+<!-- Category: Coach Messages -->
+<div class="bg-surface rounded-xl p-4 border border-outline flex justify-between items-center toggle-disabled">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Coach Feedback</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Direct messages and form corrections.</p>
+</div>
+</div>
+<!-- Toggle (Preserved ON state, grayed out) -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none h-touch-target flex items-center justify-center">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-primary border-4 appearance-none z-10 top-1/2 -translate-y-1/2 right-0 border-surface-variant" disabled="" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant w-12"></label>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-4 pt-2 bg-surface border-t border-outline z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity h-touch-target min-w-[64px]">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-label-md text-label-md">Workouts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity h-touch-target min-w-[64px]">
+<span class="material-symbols-outlined mb-1">speed</span>
+<span class="font-label-md text-label-md">Intensity</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity h-touch-target min-w-[64px]">
+<span class="material-symbols-outlined mb-1">insert_chart</span>
+<span class="font-label-md text-label-md">Progress</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary font-bold hover:text-primary transition-colors duration-100 active:opacity-80 transition-opacity h-touch-target min-w-[64px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for master toggle (demonstration purposes for UI prototype)
+        const masterToggle = document.getElementById('toggle_master');
+        const categoriesContainer = document.getElementById('notification_categories');
+        const masterIcon = document.querySelector('.bg-surface-variant .material-symbols-outlined');
+        const masterLabel = document.querySelector('.text-warning');
+
+        masterToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                // Animate categories fading in
+                categoriesContainer.classList.remove('opacity-50', 'pointer-events-none');
+                
+                // Update Master UI state to ON
+                masterIcon.textContent = 'notifications_active';
+                masterIcon.classList.add('text-secondary');
+                masterIcon.classList.remove('text-on-surface-variant');
+                
+                masterLabel.textContent = 'ENABLED';
+                masterLabel.classList.remove('text-warning');
+                masterLabel.classList.add('text-secondary');
+
+                // Remove disabled styling from internal toggles
+                const disabledToggles = categoriesContainer.querySelectorAll('.toggle-disabled');
+                disabledToggles.forEach(t => t.classList.remove('toggle-disabled'));
+                
+                const checkboxes = categoriesContainer.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.removeAttribute('disabled'));
+
+            } else {
+                // Animate categories fading out
+                categoriesContainer.classList.add('opacity-50', 'pointer-events-none');
+                
+                // Update Master UI state to OFF
+                masterIcon.textContent = 'notifications_off';
+                masterIcon.classList.remove('text-secondary');
+                masterIcon.classList.add('text-on-surface-variant');
+                
+                masterLabel.textContent = 'DISABLED_BY_USER';
+                masterLabel.classList.add('text-warning');
+                masterLabel.classList.remove('text-secondary');
+
+                // Add disabled styling back
+                const rows = categoriesContainer.querySelectorAll('.bg-surface');
+                rows.forEach(r => r.classList.add('toggle-disabled'));
+                
+                const checkboxes = categoriesContainer.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.setAttribute('disabled', 'true'));
+            }
+        });
+    </script>
+</body></html>

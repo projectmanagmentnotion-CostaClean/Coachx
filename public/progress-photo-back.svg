@@ -1,0 +1,13 @@
+<svg width="480" height="640" viewBox="0 0 480 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="640" fill="#101010"/>
+  <rect x="36" y="36" width="408" height="568" rx="32" fill="#121212" stroke="#252525"/>
+  <path d="M70 124C140 90 340 90 410 124" stroke="#1A1A1A" stroke-width="4"/>
+  <path d="M172 154C172 132 190 116 214 116H266C290 116 308 132 308 154V200C308 224 290 242 266 242H214C190 242 172 224 172 200V154Z" fill="#1F1F1F"/>
+  <path d="M184 250C190 300 192 352 192 412" stroke="#E4E2E1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M296 250C290 300 288 352 288 412" stroke="#E4E2E1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M194 300C210 280 270 280 286 300" stroke="#B6FF00" stroke-width="10" stroke-linecap="round"/>
+  <path d="M188 412C176 466 168 514 166 556" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M292 412C304 466 312 514 314 556" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="240" cy="504" r="58" fill="#1A1A1A" stroke="#252525"/>
+  <text x="240" y="530" text-anchor="middle" fill="#B6FF00" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="2">BACK</text>
+</svg>

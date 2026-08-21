@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Truthful State Matrix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "inverse-surface": "#e0e5cf",
+                        "on-tertiary": "#243141",
+                        "surface-container-high": "#272c1d",
+                        "surface-variant": "#323728",
+                        "surface-container-low": "#191d10",
+                        "on-surface": "#e0e5cf",
+                        "primary-fixed": "#b1f800",
+                        "on-primary-container": "#4d6e00",
+                        "secondary-container": "#95c600",
+                        "on-primary": "#243600",
+                        "on-primary-fixed": "#131f00",
+                        "background": "#050505",
+                        "inverse-primary": "#486800",
+                        "tertiary-fixed": "#d6e4f8",
+                        "surface-container-highest": "#323728",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "on-primary-fixed-variant": "#354e00",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "primary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary-container": "#394e00",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "surface-dim": "#101508",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c2caad",
+                        "surface-container": "#1d2114",
+                        "primary-container": "#b1f800",
+                        "on-secondary": "#263500",
+                        "outline-variant": "#424a33",
+                        "inverse-on-surface": "#2d3223",
+                        "warning": "#FFB020",
+                        "on-secondary-fixed": "#151f00",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-container": "#d6e4f8",
+                        "error": "#FF4D4F",
+                        "on-tertiary-container": "#586577",
+                        "secondary-fixed": "#c0f43f",
+                        "surface-tint": "#9bd900",
+                        "on-background": "#e0e5cf",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "primary-fixed-dim": "#9bd900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "12px",
+                        "touch-target": "44px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .ghost-border { border: 1px solid rgba(247, 247, 247, 0.1); }
+        .ghost-border-bottom { border-bottom: 1px solid rgba(247, 247, 247, 0.1); }
+        .active-state { background-color: #1A1A1A; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen w-full flex flex-col md:flex-row overflow-hidden antialiased">
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto">
+<!-- Header -->
+<header class="w-full px-margin-mobile md:px-stack-lg py-stack-md flex justify-between items-center ghost-border-bottom sticky top-0 bg-background z-20">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tighter uppercase">Truthful State Matrix</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">PREFERENCE != PERMISSION != SUBSCRIPTION != CAPABILITY</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="h-touch-target px-4 rounded-lg bg-surface text-primary ghost-border hover:bg-surface-variant transition-colors duration-100 flex items-center justify-center">
+<span class="material-symbols-outlined mr-2" data-icon="download">download</span>
+<span class="font-label-lg text-label-lg uppercase">Export Matrix</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="flex-1 p-margin-mobile md:p-stack-lg grid grid-cols-1 lg:grid-cols-12 gap-stack-md lg:gap-stack-lg content-start">
+<!-- Dimension 1: Capability -->
+<section class="lg:col-span-3 bg-surface rounded-[20px] p-stack-md ghost-border flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="memory">memory</span>
+<h2 class="font-label-lg text-label-lg text-primary uppercase">1. Capability</h2>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex items-center gap-3 active-state">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-body-md text-body-md">SUPPORTED</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-warning"></div>
+<span class="font-body-md text-body-md">INSTALL_REQUIRED</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex items-center gap-3 opacity-50">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-body-md text-body-md">UNSUPPORTED</span>
+</div>
+</section>
+<!-- Dimension 2: Permission -->
+<section class="lg:col-span-3 bg-surface rounded-[20px] p-stack-md ghost-border flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="lock_open">lock_open</span>
+<h2 class="font-label-lg text-label-lg text-primary uppercase">2. Permission</h2>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">DEFAULT</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="help">help</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-warning">REQUESTING</span>
+<span class="material-symbols-outlined text-warning text-sm animate-pulse" data-icon="pending">pending</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center active-state border-secondary-container/50">
+<span class="font-body-md text-body-md text-secondary">GRANTED</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center opacity-50">
+<span class="font-body-md text-body-md text-error">DENIED</span>
+<span class="material-symbols-outlined text-error text-sm" data-icon="cancel">cancel</span>
+</div>
+</section>
+<!-- Dimension 3: Subscription -->
+<section class="lg:col-span-3 bg-surface rounded-[20px] p-stack-md ghost-border flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="card_membership">card_membership</span>
+<h2 class="font-label-lg text-label-lg text-primary uppercase">3. Subscription</h2>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">NOT_SUBSCRIBED</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-warning">SUBSCRIBING</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center active-state border-secondary-container/50">
+<span class="font-body-md text-body-md text-secondary">SUBSCRIBED</span>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-error">ERROR</span>
+</div>
+</section>
+<!-- Dimension 4: Preference -->
+<section class="lg:col-span-3 bg-surface rounded-[20px] p-stack-md ghost-border flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="toggle_on">toggle_on</span>
+<h2 class="font-label-lg text-label-lg text-primary uppercase">4. Preference</h2>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center active-state border-secondary-container/50">
+<span class="font-body-md text-body-md text-primary">ON</span>
+<div class="w-10 h-6 bg-secondary rounded-full flex items-center justify-end px-1">
+<div class="w-4 h-4 bg-background rounded-full"></div>
+</div>
+</div>
+<div class="bg-background rounded-lg p-3 ghost-border flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">OFF</span>
+<div class="w-10 h-6 bg-surface-variant rounded-full flex items-center justify-start px-1">
+<div class="w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Logic Evaluation Engine (Spans Full Width) -->
+<section class="lg:col-span-12 bg-surface rounded-[20px] p-stack-md lg:p-stack-lg ghost-border mt-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">State Evaluation Logic</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Example 1 -->
+<div class="bg-background rounded-xl p-stack-md ghost-border relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-4 uppercase">Scenario: Silent Failure</h3>
+<div class="flex flex-wrap gap-2 mb-4 items-center font-label-md text-label-md text-primary">
+<span class="px-2 py-1 bg-surface-variant rounded">Pref: ON</span>
+<span class="text-on-surface-variant">+</span>
+<span class="px-2 py-1 bg-surface-variant rounded">Perm: GRANTED</span>
+<span class="text-on-surface-variant">+</span>
+<span class="px-2 py-1 border border-error/50 text-error rounded">Sub: ERROR</span>
+<span class="text-on-surface-variant">=</span>
+</div>
+<div class="p-3 bg-[#181818] rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-warning" data-icon="warning">warning</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Preference Saved / Execution Blocked</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">User intent captured, but system lacks subscription context to execute.</div>
+</div>
+</div>
+</div>
+<!-- Example 2 -->
+<div class="bg-background rounded-xl p-stack-md ghost-border relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-4 uppercase">Scenario: Hard Block</h3>
+<div class="flex flex-wrap gap-2 mb-4 items-center font-label-md text-label-md text-primary">
+<span class="px-2 py-1 bg-surface-variant rounded">Pref: ON</span>
+<span class="text-on-surface-variant">+</span>
+<span class="px-2 py-1 border border-error/50 text-error rounded">Perm: DENIED</span>
+<span class="text-on-surface-variant">+</span>
+<span class="px-2 py-1 bg-surface-variant rounded">Sub: SUBSCRIBED</span>
+<span class="text-on-surface-variant">=</span>
+</div>
+<div class="p-3 bg-[#181818] rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-icon="block">block</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Preference Reverted / OS Block</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">Cannot toggle preference ON if OS permission is definitively denied.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+        // Micro-interactions for interactive elements
+        document.querySelectorAll('.active-state, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+                el.style.transition = 'transform 100ms ease-in-out';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,15 @@
+<svg width="480" height="640" viewBox="0 0 480 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="640" fill="#101010"/>
+  <rect x="36" y="36" width="408" height="568" rx="32" fill="#121212" stroke="#252525"/>
+  <path d="M68 116C138 84 342 84 412 116" stroke="#1A1A1A" stroke-width="4"/>
+  <path d="M168 156C168 132 186 116 210 116H270C294 116 312 132 312 156V186C312 210 294 228 270 228H210C186 228 168 210 168 186V156Z" fill="#1F1F1F"/>
+  <path d="M180 228L160 320" stroke="#B6FF00" stroke-width="8" stroke-linecap="round"/>
+  <path d="M300 228L320 320" stroke="#B6FF00" stroke-width="8" stroke-linecap="round"/>
+  <path d="M190 236C186 274 184 332 192 410" stroke="#E4E2E1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M290 236C294 274 296 332 288 410" stroke="#E4E2E1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M190 320C214 304 266 304 290 320" stroke="#B6FF00" stroke-width="9" stroke-linecap="round"/>
+  <path d="M200 410C206 466 206 504 198 556" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M280 410C274 466 274 504 282 556" stroke="#E4E2E1" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="240" cy="500" r="58" fill="#1A1A1A" stroke="#252525"/>
+  <text x="240" y="528" text-anchor="middle" fill="#B6FF00" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="2">FRONT</text>
+</svg>

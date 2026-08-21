@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce Inputs &amp; Intensity Authority Board (Board A-H)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#586577",
+                        "surface-variant": "#323728",
+                        "on-tertiary": "#243141",
+                        "on-background": "#e0e5cf",
+                        "surface-tint": "#9bd900",
+                        "surface-dim": "#101508",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-secondary-fixed": "#151f00",
+                        "on-secondary-container": "#394e00",
+                        "warning": "#FFB020",
+                        "inverse-surface": "#e0e5cf",
+                        "secondary-fixed": "#c0f43f",
+                        "surface-bright": "#363b2c",
+                        "primary-container": "#b1f800",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "on-secondary": "#263500",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "on-surface": "#e0e5cf",
+                        "outline-variant": "#424a33",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#191d10",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "surface": "#121212",
+                        "primary-fixed": "#b1f800",
+                        "on-primary-fixed": "#131f00",
+                        "tertiary-container": "#d6e4f8",
+                        "on-primary": "#243600",
+                        "secondary": "#b0e32d",
+                        "primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "error": "#FF4D4F",
+                        "primary-fixed-dim": "#9bd900",
+                        "surface-container": "#1A1A1A",
+                        "surface-container-highest": "#323728",
+                        "tertiary": "#ffffff",
+                        "surface-container-high": "#272c1d",
+                        "on-primary-fixed-variant": "#354e00",
+                        "surface-container-lowest": "#0b1005",
+                        "inverse-on-surface": "#2d3223",
+                        "on-error": "#690005",
+                        "background": "#050505",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#486800",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "on-surface-variant": "#c2caad",
+                        "secondary-container": "#95c600",
+                        "on-primary-container": "#4d6e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .board-header {
+            border-bottom: 1px solid rgba(247, 247, 247, 0.1);
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+        .ghost-border {
+            border: 1px solid rgba(247, 247, 247, 0.1);
+        }
+        /* Hide scrollbar for slider container */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #B6FF00;
+            cursor: pointer;
+            margin-top: -8px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: rgba(247, 247, 247, 0.1);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+<div class="max-w-7xl mx-auto space-y-16">
+<!-- Header -->
+<div class="mb-12">
+<h1 class="font-display-metrics text-display-metrics text-primary tracking-tighter uppercase">AthlexForce</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Inputs &amp; Intensity Authority Board</p>
+</div>
+<!-- BOARD A: Numeric Input Family -->
+<section class="bg-surface p-6 rounded-[20px] ghost-border" id="board-a">
+<h2 class="font-headline-md text-headline-md text-primary board-header uppercase tracking-wider">Board A: Numeric Input Family</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Default -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">DEFAULT (KG)</label>
+<div class="bg-surface-container h-touch-target rounded-lg flex items-center px-4 ghost-border">
+<span class="font-body-md text-body-md text-on-surface">0.0</span>
+</div>
+</div>
+<!-- Focus / Editing -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">FOCUS / EDITING</label>
+<div class="bg-surface-container h-touch-target rounded-lg flex items-center px-4 border border-[#B6FF00]">
+<span class="font-body-md text-body-md text-primary">32.5</span>
+<div class="w-[2px] h-5 bg-[#B6FF00] ml-1 animate-pulse"></div>
+</div>
+</div>
+<!-- Invalid -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-error block">INVALID</label>
+<div class="bg-error-container/20 h-touch-target rounded-lg flex items-center px-4 border border-error">
+<span class="font-body-md text-body-md text-error">abc</span>
+</div>
+<p class="font-label-md text-label-md text-error mt-1 uppercase">ENTER A VALID NUMBER</p>
+</div>
+<!-- Saved -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">SAVED / READ-ONLY</label>
+<div class="bg-surface-container-low h-touch-target rounded-lg flex items-center px-4 border border-transparent">
+<span class="font-body-md text-body-md text-on-surface-variant">32.5</span>
+<span class="material-symbols-outlined text-secondary ml-auto" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BOARD B: Weight + Reps Logger -->
+<section class="bg-surface p-6 rounded-[20px] ghost-border" id="board-b">
+<h2 class="font-headline-md text-headline-md text-primary board-header uppercase tracking-wider">Board B: Active Set Logger</h2>
+<div class="max-w-md mx-auto bg-surface-container p-6 rounded-[20px] ghost-border space-y-6">
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-label-lg text-on-surface-variant uppercase">SET 2 OF 4</span>
+<div class="bg-surface-container-highest px-3 py-1 rounded-full">
+<span class="font-label-md text-label-md text-secondary">ACTIVE</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4 rounded-lg text-center ghost-border cursor-pointer hover:border-[#B6FF00] transition-colors">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">WEIGHT (KG)</span>
+<span class="font-headline-md text-headline-md text-primary">32.5</span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-lg text-center ghost-border cursor-pointer hover:border-[#B6FF00] transition-colors">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">REPS</span>
+<span class="font-headline-md text-headline-md text-primary">8</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-4 rounded-lg text-center ghost-border">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">RIR (Reps in Reserve)</span>
+<span class="font-headline-md text-headline-md text-primary">2</span>
+</div>
+<button class="w-full h-touch-target bg-[#B6FF00] text-black rounded-lg font-label-lg text-label-lg uppercase tracking-wider hover:bg-opacity-90 active:scale-95 transition-all">
+                    COMPLETE SET 2
+                </button>
+</div>
+</section>
+<!-- BOARD C: Stepper -->
+<section class="bg-surface p-6 rounded-[20px] ghost-border" id="board-c">
+<h2 class="font-headline-md text-headline-md text-primary board-header uppercase tracking-wider">Board C: Stepper Controls</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Default -->
+<div class="space-y-2 text-center">
+<label class="font-label-md text-label-md text-on-surface-variant block">DEFAULT</label>
+<div class="flex items-center justify-center space-x-4 bg-surface-container p-2 rounded-lg ghost-border">
+<button class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center ghost-border text-primary hover:text-[#B6FF00] transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary w-20 text-center">32.5</span>
+<button class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center ghost-border text-primary hover:text-[#B6FF00] transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Pressed (-) -->
+<div class="space-y-2 text-center">
+<label class="font-label-md text-label-md text-on-surface-variant block">PRESSED DECREMENT</label>
+<div class="flex items-center justify-center space-x-4 bg-surface-container p-2 rounded-lg ghost-border">
+<button class="w-10 h-10 rounded bg-[#B6FF00]/20 flex items-center justify-center border border-[#B6FF00] text-[#B6FF00] scale-95 transition-transform">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary w-20 text-center">32.5</span>
+<button class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center ghost-border text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Changed -->
+<div class="space-y-2 text-center">
+<label class="font-label-md text-label-md text-on-surface-variant block">VALUE CHANGED (UNSAVED)</label>
+<div class="flex items-center justify-center space-x-4 bg-surface-container p-2 rounded-lg border border-warning/50">
+<button class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center ghost-border text-primary hover:text-[#B6FF00] transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-headline-md text-headline-md text-warning w-20 text-center">35.0</span>
+<button class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center ghost-border text-primary hover:text-[#B6FF00] transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- BOARD D: RIR -->
+<section class="bg-surface p-6 rounded-[20px] ghost-border" id="board-d">
+<h2 class="font-headline-md text-headline-md text-primary board-header uppercase tracking-wider">Board D: RIR (Reps in Reserve)</h2>
+<div class="space-y-6">
+<div class="flex justify-between text-on-surface-variant font-label-md text-label-md px-2">
+<span>MAX EFFORT</span>
+<span>CONTROLLED</span>
+</div>
+<div class="flex space-x-2 overflow-x-auto no-scrollbar pb-2">
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-surface-container-high text-primary ghost-border hover:border-[#B6FF00] font-headline-md transition-colors">0</button>
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-[#B6FF00] text-black font-headline-md shadow-[0_0_15px_rgba(182,255,0,0.3)]">1</button>
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-surface-container-high text-primary ghost-border hover:border-[#B6FF00] font-headline-md transition-colors">2</button>
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-surface-container-high text-primary ghost-border hover:border-[#B6FF00] font-headline-md transition-colors">3</button>
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-surface-container-high text-primary ghost-border hover:border-[#B6FF00] font-headline-md transition-colors">4</button>
+<button class="flex-1 min-w-[60px] h-touch-target rounded bg-surface-container-high text-primary ghost-border hover:border-[#B6FF00] font-headline-md transition-colors">5+</button>
+</div>
+</div>
+</section>
+<!-- BOARD E: RPE Slider -->
+<section class="bg-surface p-6 rounded-[20px] ghost-border" id="board-e">
+<h2 class="font-headline-md text-headline-md text-primary board-header uppercase tracking-wider">Board E: RPE Slider</h2>
+<div class="pt-8 pb-4 relative max-w-2xl mx-auto">
+<!-- Current Value Bubble (Simulated position at 8) -->
+<div class="absolute top-0 left-[50%] -translate-x-1/2 bg-[#B6FF00] text-black font-headline-md w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-[0_0_15px_rgba(182,255,0,0.3)]">
+                    8
+                </div>
+<input class="w-full appearance-none bg-transparent relative z-10 mt-6" max="10" min="6" step="0.5" type="range" value="8"/>
+<div class="flex justify-between text-on-surface-variant font-label-md text-label-md mt-4">
+<span>6 (EASY)</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<span>10 (MAX)</span>
+</div>
+</div>
+</section>
+</div>
+</body></html>

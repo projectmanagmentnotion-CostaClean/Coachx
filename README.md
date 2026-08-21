@@ -1,52 +1,46 @@
-# CoachX
+﻿# COACHX
 
-CoachX es una app móvil-first/PWA para coaching personal de entrenamiento, nutrición y seguimiento.
+COACHX is an iPhone-first athlete app built from Stitch references and the repository design rules.
 
-## Visión MVP
+## Current routes
 
-Flujo principal del usuario:
+- `/` Today
+- `/calendar`
+- `/day/[date]`
+- `/day/[date]/nutrition`
+- `/progress`
+- `/profile`
 
-**Calendario → Día → Rutina + dieta + grupos musculares → ejercicio → registro de peso/repeticiones → historial en la próxima sesión**.
+## Stack
 
-La app debe sentirse como una app nativa de iPhone: muy simple, rápida, visual y con navegación mínima.
+- Next.js App Router
+- TypeScript
+- GSAP motion layer
+- Local fixture data
 
-## Núcleo del producto
+## Run
 
-- Calendario mensual/semanal como entrada principal.
-- Pantalla diaria con resumen de entrenamiento, dieta, cardio/hábitos y grupos musculares.
-- Imágenes claras de los grupos musculares trabajados.
-- Ejercicios con imagen/guía y variante equivalente de máquina o mancuernas.
-- Registro por serie de peso, repeticiones y RIR.
-- Recuperación automática del último registro al repetir grupo muscular/ejercicio.
-- Dieta diaria con al menos 3 opciones equivalentes por comida.
-- Perfil y onboarding altamente personalizado.
-- OpenAI para generar/proponer rutinas, dietas e interpretar progreso.
-- Supabase como fuente de verdad para usuarios, planes, registros y progreso.
-- Panel de coach para revisar y aprobar cambios importantes.
+```bash
+pnpm dev
+```
 
-## Stack propuesto
+## Build
 
-- Next.js + React + TypeScript
-- Tailwind CSS
-- PWA instalable en iPhone
-- Supabase: Auth, Postgres y Storage
-- OpenAI Responses API desde servidor
-- Zod/JSON Schema para respuestas estructuradas de IA
-- Vercel para despliegue inicial
+```bash
+pnpm build
+```
 
-## Principio de arquitectura
+## Notes
 
-OpenAI **no** será la base de datos ni decidirá silenciosamente cambios críticos. La IA propone/interpreta; Supabase guarda el estado real y el coach puede aprobar ajustes.
+- Stitch is the visual source of truth for implemented screens.
+- Mock data is centralized in `lib/coachx-data.ts`.
+- Shared motion presets live in `motion/`.
 
-La clave de OpenAI se mantiene exclusivamente en servidor, nunca en el navegador.
+## iPhone install test
 
-## Documentos
-
-- `ROADMAP.md` — fases de construcción.
-- `docs/PRODUCT.md` — alcance MVP y experiencia móvil.
-- `docs/ARCHITECTURE.md` — arquitectura técnica resumida.
-- `AGENTS.md` — reglas para agentes/Codex que trabajen en el repo.
-
-## Estado
-
-Proyecto inicializado. Siguiente paso: **Fase 1 — shell móvil + autenticación + calendario**.
+1. Open the deployed preview in Safari on iPhone.
+2. Tap the Share button in the browser toolbar.
+3. Choose `Add to Home Screen`.
+4. Launch COACHX from the Home Screen icon.
+5. Verify the app opens in standalone mode with minimal browser chrome.
+6. Open a day detail screen and confirm the nutrition route uses the same demo day.

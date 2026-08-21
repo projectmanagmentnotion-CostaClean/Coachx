@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="AthlexForce icon">
+  <rect width="192" height="192" rx="40" fill="#050505"/>
+  <circle cx="96" cy="96" r="62" fill="#121212" stroke="#252525" stroke-width="4"/>
+  <path d="M53 92h86" stroke="#B6FF00" stroke-width="14" stroke-linecap="round"/>
+  <path d="M74 68l-20 24 20 24" fill="none" stroke="#B6FF00" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 68l20 24-20 24" fill="none" stroke="#B6FF00" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

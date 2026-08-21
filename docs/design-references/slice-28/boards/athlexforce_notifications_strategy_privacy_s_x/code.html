@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - S-X Strategy &amp; Examples</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#121212",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323728",
+                        "on-surface": "#e0e5cf",
+                        "on-tertiary-container": "#586577",
+                        "outline-variant": "#424a33",
+                        "secondary-container": "#95c600",
+                        "warning": "#FFB020",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary": "#263500",
+                        "tertiary-container": "#d6e4f8",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "on-primary": "#243600",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-background": "#e0e5cf",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container": "#1d2114",
+                        "surface-variant": "#323728",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-fixed": "#151f00",
+                        "on-surface-variant": "#c2caad",
+                        "on-secondary-container": "#394e00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#b1f800",
+                        "surface-container-low": "#191d10",
+                        "surface-tint": "#9bd900",
+                        "primary-fixed-dim": "#9bd900",
+                        "secondary-fixed": "#c0f43f",
+                        "on-tertiary": "#243141",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "inverse-surface": "#e0e5cf",
+                        "background": "#050505",
+                        "surface-container-high": "#272c1d",
+                        "primary-fixed": "#b1f800",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#354e00",
+                        "primary": "#ffffff",
+                        "surface-dim": "#101508",
+                        "on-primary-container": "#4d6e00",
+                        "inverse-on-surface": "#2d3223",
+                        "inverse-primary": "#486800",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "error": "#FF4D4F"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "20": "20px"
+                    },
+                    spacing: {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-metrics": ["48px", { lineHeight: "48px", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .ghost-border { border: 1px solid rgba(247, 247, 247, 0.1); }
+        .nav-link { transition: all 0.2s ease-out; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen pt-16 pb-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-stack-lg w-full max-w-7xl mx-auto">
+<div class="font-display-lg text-display-lg font-black text-secondary tracking-tighter">AthlexForce</div>
+<div class="hidden md:flex gap-8">
+<!-- Desktop Nav items would go here. Since this is an internal presentation board, no specific active tab -->
+<span class="text-on-surface-variant font-medium">Strategy &amp; Examples</span>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary hover:bg-surface-container-highest transition-colors rounded-full p-2 cursor-pointer active:scale-95 duration-100">notifications</span>
+<span class="material-symbols-outlined text-primary hover:bg-surface-container-highest transition-colors rounded-full p-2 cursor-pointer active:scale-95 duration-100">settings</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest ghost-border overflow-hidden">
+<img alt="Athlete Profile" class="object-cover w-full h-full" data-alt="A detailed 50-100 word prompt describing a high-contrast black and neon green futuristic athlete profile picture, moody lighting, professional studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbs8acVXWQ0ClEL0Uwy54pTC0HoAXupbkwh-yuorJd-Lu0hJBrtqQrJy_T0F3S1tr9Nf8qP7iSpS-wQItT5E_cDIE0awred9oiiZrhMZpWiaSDuapkphKdnkoHgYZmjUKcsWijcExexjhCdqaLIRkyyo32vtcFQKEDCsWZqZo2i4fB28D3a_KJxqCf9opgP2kRTR5AWbjZ2vOH3k29gMVz0omOOTXyo-D_CxJ7shUVrY3pmPMkfMQQmw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-stack-lg py-stack-lg flex flex-col gap-stack-lg">
+<section class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-2">S-X: Strategy &amp; Examples</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Defining the 'when' and 'what' of the notification experience.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter auto-rows-min">
+<!-- BOARD S: PERMISSION STRATEGY -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border col-span-1 lg:col-span-2">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<h2 class="font-headline-md text-headline-md text-primary">BOARD S: PERMISSION STRATEGY</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-stack-md">
+<div class="flex-1 bg-surface-container-lowest p-stack-md rounded-lg ghost-border border-l-4 border-l-[#B6FF00]">
+<h3 class="font-label-lg text-label-lg text-primary mb-2 flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> DO</h3>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant mb-4 overflow-x-auto whitespace-nowrap">
+<span class="px-2 py-1 bg-surface-variant rounded-full">Use App</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="px-2 py-1 bg-surface-variant rounded-full">Milestone</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="px-2 py-1 bg-primary-container text-on-primary-container rounded-full">Enable</span>
+</div>
+<p class="font-body-md text-body-md text-on-background">Trigger permission requests organically after user demonstrates intent, e.g., completing their first workout plan setup.</p>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-stack-md rounded-lg ghost-border border-l-4 border-l-error">
+<h3 class="font-label-lg text-label-lg text-primary mb-2 flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-error">cancel</span> DON'T</h3>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant mb-4 overflow-x-auto whitespace-nowrap">
+<span class="px-2 py-1 bg-surface-variant rounded-full">Login</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+<span class="px-2 py-1 bg-error-container text-on-error-container rounded-full">Prompt</span>
+</div>
+<p class="font-body-md text-body-md text-on-background">Never ambush the user with native OS permission dialogs immediately upon first launch or login.</p>
+</div>
+</div>
+</article>
+<!-- BOARD T: NOTIFICATION EXAMPLES -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border row-span-2">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="material-symbols-outlined text-secondary">notifications_active</span>
+<h2 class="font-headline-md text-headline-md text-primary">BOARD T: NOTIFICATIONS</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Short, neutral, useful copy. No 'streak' or 'fear' tactics.</p>
+<div class="flex flex-col gap-3">
+<!-- Notification 1 -->
+<div class="bg-[#181818] rounded-xl p-4 ghost-border flex gap-3 shadow-lg">
+<div class="w-8 h-8 rounded bg-black flex items-center justify-center shrink-0">
+<span class="font-display-metrics text-secondary text-lg">A</span>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">AthlexForce</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Now</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">Upper Body starts in 30 min</h4>
+<p class="font-body-md text-sm text-on-background">Your coach scheduled a session.</p>
+</div>
+</div>
+<!-- Notification 2 -->
+<div class="bg-[#181818] rounded-xl p-4 ghost-border flex gap-3 shadow-lg">
+<div class="w-8 h-8 rounded bg-black flex items-center justify-center shrink-0">
+<span class="font-display-metrics text-secondary text-lg">A</span>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">AthlexForce</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h ago</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">Your next meal is coming up</h4>
+<p class="font-body-md text-sm text-on-background">Pre-workout fuel window opening.</p>
+</div>
+</div>
+<!-- Notification 3 -->
+<div class="bg-[#181818] rounded-xl p-4 ghost-border flex gap-3 shadow-lg">
+<div class="w-8 h-8 rounded bg-black flex items-center justify-center shrink-0">
+<span class="font-display-metrics text-secondary text-lg">A</span>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">AthlexForce</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2h ago</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">Weekly check-in is ready</h4>
+<p class="font-body-md text-sm text-on-background">Log your metrics for the week.</p>
+</div>
+</div>
+</div>
+</article>
+<!-- BOARD U: DEEP LINK MAP -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border col-span-1 lg:col-span-2">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="material-symbols-outlined text-secondary">route</span>
+<h2 class="font-headline-md text-headline-md text-primary">BOARD U: DEEP LINK MAP</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-sm">
+<div class="flex items-center justify-between p-3 bg-surface-container-highest rounded-lg ghost-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">fitness_center</span>
+<span class="font-label-lg text-label-lg text-primary">Workout</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
+<span class="font-body-md text-sm bg-[#1A1A1A] px-2 py-1 rounded text-on-background font-mono">/workout/today</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-highest rounded-lg ghost-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
+<span class="font-label-lg text-label-lg text-primary">Meals</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
+<span class="font-body-md text-sm bg-[#1A1A1A] px-2 py-1 rounded text-on-background font-mono">/nutrition</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-highest rounded-lg ghost-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">assignment</span>
+<span class="font-label-lg text-label-lg text-primary">Check-in</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
+<span class="font-body-md text-sm bg-[#1A1A1A] px-2 py-1 rounded text-on-background font-mono">/check-in</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-highest rounded-lg ghost-border border-error/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+<span class="font-label-lg text-label-lg text-error">Custom</span>
+</div>
+<span class="font-label-sm text-[10px] bg-error-container text-on-error-container px-2 py-1 rounded uppercase">DO NOT INVENT ROUTE</span>
+</div>
+</div>
+</article>
+<!-- BOARD V & W: STATUS STATES -->
+<div class="flex flex-col gap-gutter col-span-1">
+<!-- V: Timezone -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border flex-1 border-t-2 border-t-secondary-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">schedule</span>
+<div>
+<h2 class="font-headline-md text-base font-bold text-primary mb-1">REMINDERS UPDATED</h2>
+<p class="font-body-md text-sm text-on-surface-variant">Your reminder times were adjusted to your current schedule timezone.</p>
+</div>
+</div>
+</article>
+<!-- W: Offline -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border flex-1 border-t-2 border-t-warning">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-warning mt-1">cloud_off</span>
+<div>
+<h2 class="font-headline-md text-base font-bold text-primary mb-1">CHANGES PENDING</h2>
+<p class="font-body-md text-sm text-on-surface-variant">We'll retry syncing your settings when you're back online.</p>
+</div>
+</div>
+</article>
+</div>
+<!-- BOARD X: PRIVACY -->
+<article class="bg-surface rounded-20 p-stack-md ghost-border col-span-1 lg:col-span-2 flex items-center">
+<div class="flex items-center gap-4 w-full">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">lock</span>
+</div>
+<div class="flex-1">
+<h2 class="font-label-lg text-label-lg text-primary mb-1">NOTIFICATION PRIVACY</h2>
+<p class="font-body-md text-sm text-on-surface-variant">AthlexForce uses notification permission <strong>only</strong> for the reminders you enable.</p>
+</div>
+<div class="shrink-0">
+<!-- Toggle switch visual -->
+<div class="w-10 h-6 bg-secondary rounded-full relative cursor-pointer">
+<div class="w-4 h-4 bg-black rounded-full absolute top-1 right-1"></div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container dark:bg-surface-container border-t border-outline-variant shadow-lg h-20 pb-safe">
+<div class="flex justify-around items-center h-full px-4">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-label-sm text-label-sm mt-1">Training</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-label-sm text-label-sm mt-1">Log</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-sm text-label-sm mt-1">KPIs</span>
+</div>
+<!-- For internal presentation, keeping Profile visually un-active but standard to shared components -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

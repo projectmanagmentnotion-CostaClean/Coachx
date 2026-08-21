@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiet Hours Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "inverse-surface": "#e0e5cf",
+                        "on-tertiary": "#243141",
+                        "surface-container-high": "#272c1d",
+                        "surface-variant": "#323728",
+                        "surface-container-low": "#191d10",
+                        "on-surface": "#e0e5cf",
+                        "primary-fixed": "#b1f800",
+                        "on-primary-container": "#4d6e00",
+                        "secondary-container": "#95c600",
+                        "on-primary": "#243600",
+                        "on-primary-fixed": "#131f00",
+                        "background": "#050505",
+                        "inverse-primary": "#486800",
+                        "tertiary-fixed": "#d6e4f8",
+                        "surface-container-highest": "#323728",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "on-primary-fixed-variant": "#354e00",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "primary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary-container": "#394e00",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "surface-dim": "#101508",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c2caad",
+                        "surface-container": "#1d2114",
+                        "primary-container": "#b1f800",
+                        "on-secondary": "#263500",
+                        "outline-variant": "#424a33",
+                        "inverse-on-surface": "#2d3223",
+                        "warning": "#FFB020",
+                        "on-secondary-fixed": "#151f00",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-container": "#d6e4f8",
+                        "error": "#FF4D4F",
+                        "on-tertiary-container": "#586577",
+                        "secondary-fixed": "#c0f43f",
+                        "surface-tint": "#9bd900",
+                        "on-background": "#e0e5cf",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "primary-fixed-dim": "#9bd900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "12px",
+                        "touch-target": "44px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .toggle-checkbox:checked { right: 0; border-color: #B6FF00; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #B6FF00; }
+        .toggle-checkbox:checked + .toggle-label:after { transform: translateX(100%); border-color: white; }
+    </style>
+</head>
+<body class="bg-background text-primary antialiased min-h-screen pb-24">
+<!-- Top App Bar (Suppressed on settings sub-pages, replacing with a simple back nav) -->
+<header class="flex justify-between items-center px-margin-mobile h-touch-target w-full z-50 bg-background sticky top-0 border-b border-outline">
+<button class="h-touch-target w-touch-target flex items-center justify-start text-primary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Notifications</h1>
+<div class="h-touch-target w-touch-target"></div>
+</header>
+<main class="px-margin-mobile pt-stack-lg max-w-lg mx-auto flex flex-col gap-stack-lg">
+<div class="space-y-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Quiet Hours</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage when AthlexForce pauses non-critical coaching reminders.</p>
+</div>
+<!-- L1: DISABLED STATE -->
+<section aria-label="Disabled State Example" class="bg-surface rounded-xl p-4 border border-outline flex flex-col gap-stack-md opacity-80">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications_off">notifications_off</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-primary">Quiet Hours</h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Off</p>
+</div>
+</div>
+<!-- Toggle -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in" id="toggle1" name="toggle1" style="top: 2px; left: 2px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-7 rounded-full bg-[#323728] cursor-pointer border border-outline" for="toggle1"></label>
+</div>
+</div>
+</section>
+<!-- L2: ENABLED STATE -->
+<section aria-label="Enabled State Example" class="bg-surface rounded-xl p-4 border border-[#B6FF00] border-opacity-40 flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#B6FF00] flex items-center justify-center">
+<span class="material-symbols-outlined text-background" data-icon="bedtime">bedtime</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-primary">Quiet Hours</h3>
+<p class="font-label-md text-label-md text-primary uppercase">On</p>
+</div>
+</div>
+<!-- Toggle -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in" id="toggle2" name="toggle2" style="top: 2px; left: 2px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-7 rounded-full bg-[#B6FF00] cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<div class="bg-[#181818] rounded-lg p-3 flex justify-between items-center mt-2 border border-outline">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">SCHEDULE</p>
+<p class="font-body-md text-body-md text-primary">23:00 – 07:00</p>
+</div>
+<button class="h-touch-target px-4 text-[#B6FF00] font-label-lg text-label-lg uppercase rounded-lg hover:bg-[#1A1A1A] transition-colors duration-100 flex items-center">
+                    Edit
+                </button>
+</div>
+<div class="flex items-start gap-2 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mt-0.5" data-icon="info" style="font-size: 16px;">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant leading-relaxed">
+                    Non-critical reminders stay silent during this period. Critical coaching adjustments will still appear in app.
+                </p>
+</div>
+</section>
+<!-- L3: EDITING STATE -->
+<section aria-label="Editing State Example" class="bg-surface rounded-xl p-4 border border-outline flex flex-col gap-stack-md relative overflow-hidden">
+<!-- Simulated Modal/Overlay Feel -->
+<div class="absolute inset-0 bg-[#121212] z-0"></div>
+<div class="relative z-10 flex flex-col gap-stack-lg">
+<div class="flex justify-between items-center border-b border-outline pb-3">
+<h3 class="font-label-lg text-label-lg text-primary uppercase">Set Schedule</h3>
+<button class="h-touch-target w-touch-target flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Start Time -->
+<div class="flex items-center justify-between bg-[#181818] rounded-lg p-3 border border-outline">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Start Time</span>
+<div class="flex gap-2">
+<select class="bg-[#1A1A1A] border-none rounded-md text-primary font-body-md text-body-md h-touch-target px-3 focus:ring-1 focus:ring-[#B6FF00]">
+<option>21</option>
+<option>22</option>
+<option selected="">23</option>
+<option>00</option>
+</select>
+<span class="flex items-center text-primary font-body-md text-body-md">:</span>
+<select class="bg-[#1A1A1A] border-none rounded-md text-primary font-body-md text-body-md h-touch-target px-3 focus:ring-1 focus:ring-[#B6FF00]">
+<option selected="">00</option>
+<option>15</option>
+<option>30</option>
+<option>45</option>
+</select>
+</div>
+</div>
+<!-- End Time -->
+<div class="flex items-center justify-between bg-[#181818] rounded-lg p-3 border border-outline">
+<span class="font-label-lg text-label-lg text-on-surface-variant">End Time</span>
+<div class="flex gap-2">
+<select class="bg-[#1A1A1A] border-none rounded-md text-primary font-body-md text-body-md h-touch-target px-3 focus:ring-1 focus:ring-[#B6FF00]">
+<option>05</option>
+<option>06</option>
+<option selected="">07</option>
+<option>08</option>
+</select>
+<span class="flex items-center text-primary font-body-md text-body-md">:</span>
+<select class="bg-[#1A1A1A] border-none rounded-md text-primary font-body-md text-body-md h-touch-target px-3 focus:ring-1 focus:ring-[#B6FF00]">
+<option selected="">00</option>
+<option>15</option>
+<option>30</option>
+<option>45</option>
+</select>
+</div>
+</div>
+</div>
+<button class="w-full h-touch-target bg-[#B6FF00] text-background font-label-lg text-label-lg uppercase rounded-lg mt-4 active:scale-95 transition-transform duration-100 flex items-center justify-center">
+                    Save Schedule
+                </button>
+</div>
+</section>
+</main>
+<!-- Suppressed Bottom Nav (Dead end / settings page) -->
+</body></html>

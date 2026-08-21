@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AthlexForce - Preferences &amp; Timing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121212",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323728",
+                        "on-surface": "#e0e5cf",
+                        "on-tertiary-container": "#586577",
+                        "outline-variant": "#424a33",
+                        "secondary-container": "#95c600",
+                        "warning": "#FFB020",
+                        "surface-container-lowest": "#0b1005",
+                        "on-secondary": "#263500",
+                        "tertiary-container": "#d6e4f8",
+                        "on-secondary-fixed-variant": "#394d00",
+                        "on-primary": "#243600",
+                        "outline": "rgba(247, 247, 247, 0.1)",
+                        "tertiary-fixed-dim": "#bac8dc",
+                        "tertiary-fixed": "#d6e4f8",
+                        "on-background": "#e0e5cf",
+                        "on-tertiary-fixed": "#0f1c2b",
+                        "surface-container": "#1d2114",
+                        "surface-variant": "#323728",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-fixed": "#151f00",
+                        "on-surface-variant": "#c2caad",
+                        "on-secondary-container": "#394e00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#b1f800",
+                        "surface-container-low": "#191d10",
+                        "surface-tint": "#9bd900",
+                        "primary-fixed-dim": "#9bd900",
+                        "secondary-fixed": "#c0f43f",
+                        "on-tertiary": "#243141",
+                        "secondary-fixed-dim": "#a5d71f",
+                        "inverse-surface": "#e0e5cf",
+                        "background": "#050505",
+                        "surface-container-high": "#272c1d",
+                        "primary-fixed": "#b1f800",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#354e00",
+                        "primary": "#ffffff",
+                        "surface-dim": "#101508",
+                        "on-primary-container": "#4d6e00",
+                        "inverse-on-surface": "#2d3223",
+                        "inverse-primary": "#486800",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3a4858",
+                        "surface-bright": "#363b2c",
+                        "secondary": "#b0e32d",
+                        "error": "#FF4D4F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "20px": "20px"
+                    },
+                    "spacing": {
+                        "touch-target": "44px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-metrics": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-metrics": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #050505; color: #ffffff; }
+        .card { background-color: #121212; border-radius: 20px; border: 1px solid rgba(247, 247, 247, 0.1); padding: 16px; }
+        .btn-primary { background-color: #B6FF00; color: #000; border-radius: 8px; min-height: 44px; display: flex; align-items: center; justify-content: center; font-weight: 600; padding: 0 16px; transition: opacity 150ms ease; }
+        .btn-primary:active { opacity: 0.8; }
+        .toggle-switch { width: 44px; height: 24px; border-radius: 12px; position: relative; transition: background-color 200ms ease; cursor: pointer; }
+        .toggle-switch::after { content: ''; position: absolute; width: 20px; height: 20px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: transform 200ms ease; }
+        .toggle-switch.on { background-color: #B6FF00; }
+        .toggle-switch.on::after { transform: translateX(20px); background: #000; }
+        .toggle-switch.off { background-color: #323728; }
+    </style>
+</head>
+<body class="min-h-screen text-on-surface pb-24 md:pb-0">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-black text-secondary tracking-tighter">AthlexForce</h1>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer border-b-2 border-secondary text-secondary font-bold">settings</span>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile max-w-2xl mx-auto space-y-stack-lg">
+<!-- Board H: Master Control -->
+<section class="card flex justify-between items-center">
+<div>
+<h2 class="font-headline-md text-headline-md">NOTIFICATIONS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Master alert control</p>
+</div>
+<div class="toggle-switch on" onclick="this.classList.toggle('on'); this.classList.toggle('off');"></div>
+</section>
+<!-- Board I: Category Preferences -->
+<section class="space-y-stack-md">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase">Categories</h3>
+<div class="space-y-stack-sm">
+<div class="card flex justify-between items-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">fitness_center</span>
+<div>
+<h4 class="font-body-lg text-body-lg font-bold">WORKOUT</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Before planned sessions</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="card flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">restaurant</span>
+<div>
+<h4 class="font-body-lg text-body-lg font-bold">MEALS</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Nutrition timing alerts</p>
+</div>
+</div>
+<div class="toggle-switch on" onclick="this.classList.toggle('on'); this.classList.toggle('off');"></div>
+</div>
+</div>
+</section>
+<!-- Board J: Category Detail (Simulated inline for demo) -->
+<section class="card border border-secondary border-opacity-30">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-secondary">WORKOUT TIMING</h3>
+<div class="toggle-switch on" onclick="this.classList.toggle('on'); this.classList.toggle('off');"></div>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-surface-container-high py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors">15 MIN</button>
+<button class="bg-secondary text-on-secondary font-bold py-2 rounded-lg font-label-md text-label-md">30 MIN</button>
+<button class="bg-surface-container-high py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors">1 HOUR</button>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-4 text-center">Schedule-derived based on plan</p>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container border-t border-outline-variant shadow-lg md:hidden rounded-t-xl pb-safe">
+<div class="flex justify-around items-center h-20 px-4">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-label-sm text-label-sm">Training</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>
